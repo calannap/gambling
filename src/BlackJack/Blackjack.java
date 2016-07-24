@@ -3,11 +3,17 @@ package BlackJack;
 
 import java.util.Scanner;
 
-public class Blackjack {
+public class Blackjack implements Runnable {
 
-	public static void main(String[] args){
+	
 		
-		System.out.println("******************"+ "\n"+ "Welcome to LSBlackjack"+"\n"+ "******************");
+
+		
+	
+
+    @Override
+    public void run() {
+        		System.out.println("******************"+ "\n"+ "Welcome to LSBlackjack"+"\n"+ "******************");
 		ASCIIArt a = new ASCIIArt();
 		//playingDeck will be the deck the dealer holds
 		Deck playingDeck = new Deck();
@@ -155,8 +161,7 @@ while(playerMoney>0){
 		
 		//Close Scanner
 		userInput.close();
-		
-	}
+    }
 	
 	
 }

@@ -1,4 +1,6 @@
 
+
+import BlackJack.Blackjack;
 import Controlador.ListenerBotons;
 import Model.inicia;
 import Vista.Finestra;
@@ -181,18 +183,8 @@ public class ClientGUI extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() 
-            {
-                Finestra vista = new Finestra();
-		inicia model = new inicia();
-                ListenerBotons controlador = new ListenerBotons(vista, model);
-		model.resgisteListener(controlador);
-		vista.registreControladorBoto(controlador);
-		vista.setVisible(true);
-		model.juga();			
-            }
-		});
+        Thread t = new Thread(new Blackjack());
+        t.start();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
